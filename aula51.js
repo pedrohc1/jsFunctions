@@ -19,5 +19,3 @@ const p2 = {
   sobrenome: "Oliveira",
 };
 //os 2 criam o mesmo objeto
-
-const olaMundo = falaFrase("Ola");
