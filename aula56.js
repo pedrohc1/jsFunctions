@@ -4,10 +4,19 @@ function criaPessoa(nome,sobrenome,altura,peso){
     return{
         nome,
         sobrenome,
+        
         //getter 
         get nomeCompleto(){
-            return `${nome} ${sobrenome}`
+            return `${this.nome} ${this.sobrenome}`
         },
+
+        //setter
+        set nomeCompleto(valor){
+            valor = valor.split('');
+            this.nome = valor.shift();
+            console.log(valor)
+        },
+
         fala:function(assunto){
         return `${this.nome} está ${assunto}.`
         }, 
@@ -22,6 +31,7 @@ function criaPessoa(nome,sobrenome,altura,peso){
 }
 
 const p1 = criaPessoa ("Pedro","Henrique",1.75,80);
+p1.nomeCompleto = 'Maria Oliveira Silva';
 console.log(p1.nomeCompleto)
 // quando tem um getter nao precisa da () para mostrar a funcao
-console.log(p1.fala("falando sobre JS"))
+ 
